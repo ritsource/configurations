@@ -9,6 +9,7 @@ declare -a tracked_file_paths=(
     ".bash_profie"
     ".profile"
     ".config/nvim/init.vim"
+    ".config/nvim/coc-settings.json"
     ".config/nvim/extra.vim"
 )
 
