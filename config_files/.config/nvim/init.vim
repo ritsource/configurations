@@ -824,11 +824,14 @@ highlight Cursor guifg=black guibg=#ffcc66
   cnoremap <expr> <down> wildmenumode() ? "\<right>" : "\<down>"
   cnoremap <expr> <left> wildmenumode() ? "\<up>" : "\<left>"
   cnoremap <expr> <right> wildmenumode() ? " \<bs>\<C-Z>" : "\<right>"
+  cnoremap <expr> <CR> wildmenumode() ? " \<bs>\<C-Z>" : "\<CR>"
   
 " }}}}
 
 
-
+" for JSX  support
+" Plug 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript'
 
 
 
