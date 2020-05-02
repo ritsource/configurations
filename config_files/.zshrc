@@ -190,5 +190,23 @@ alias confv="confedit"
 alias confe="confedit"
 #
 
+# a default arguement for the tree command
+# the function runs the tree command with a default arguement
+# 
+custom_tree() {
+    tree -I 'bin|node_modules' $@
+}
+# 
+# aliasing custom tree command
+#
+alias tree="custom_tree"
+#
+
 # startup command
-fortune | cowsay -f sodomized | lolcat -a -d 1
+# random number between 0 to 10, if 1 then print
+if [ 1 -eq $(python -S -c "import random; print random.randrange(0,10)") ]; then
+    fortune | cowsay -f sodomized | lolcat -a -d 1
+fi
+#
+
+

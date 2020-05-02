@@ -811,9 +811,21 @@ let g:LanguageClient_serverCommands = {
 highlight Cursor guifg=black guibg=#ffcc66
 
 
-
-
-
+" for menu completion like 
+" {{{{
+  
+  set wildmenu
+  set wildmode=longest:full,full
+  
+  " for comfortable arrow navigation
+  " source - https://vi.stackexchange.com/questions/22627/switching-arrow-key-mappings-for-wildmenu-tab-completion
+  set wildcharm=<C-Z>
+  cnoremap <expr> <up> wildmenumode() ? "\<left>" : "\<up>"
+  cnoremap <expr> <down> wildmenumode() ? "\<right>" : "\<down>"
+  cnoremap <expr> <left> wildmenumode() ? "\<up>" : "\<left>"
+  cnoremap <expr> <right> wildmenumode() ? " \<bs>\<C-Z>" : "\<right>"
+  
+" }}}}
 
 
 
