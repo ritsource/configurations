@@ -1,8 +1,10 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # # Path to your oh-my-zsh installation.
 # export ZSH="/Users/P.rit/.oh-my-zsh"
+#
+clear
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/$USER/.oh-my-zsh"
@@ -15,8 +17,6 @@ plugins=(
     zsh-syntax-highlighting
 )
 
-source $ZSH/oh-my-zsh.sh
-
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
@@ -25,6 +25,8 @@ ZSH_THEME="robbyrussell"
 # from now custom stuff .....
 # ...........................
 # ...........................
+
+source $ZSH/oh-my-zsh.sh
 
 # kaybindings for H,J,K,L navgation on terminal
 # source - https://unix.stackexchange.com/a/323279/359073
@@ -58,6 +60,8 @@ export PATH=$PATH:~/.custom/scripts/bin
 # Go-path export (golang)
 #
 export GOPATH=$HOME/go
+export GOROOT=$HOME/go
+export PATH=$PATH:$GOROOT/bin
 # 
 
 # exporting nvim as default text editor
@@ -98,6 +102,7 @@ alias rust="cargo"
 alias vi="nvim"
 alias vim="nvim"
 alias vi.="nvim ."
+alias .="nvim ."
 #
 
 # git alias, shortcuts for most
@@ -129,9 +134,16 @@ alias co_nf="confedit"
 
 # startup command
 # random number between 0 to 10, if 1 then print
-if [ 1 -eq $(python -S -c "import random; print random.randrange(0,10)") ]; then
+if [ 3 -gt $(python -S -c "import random; print random.randrange(0,10)") ]; then
     fortune | cowsay -f sodomized | lolcat -a -d 1
 fi
 #
+
+# language stuff I think, NO IDEA
+# source - https://stackoverflow.com/a/56743150/9406420
+export LC_ALL=en_US.UTF-8
+#
+
+# clear
 
 

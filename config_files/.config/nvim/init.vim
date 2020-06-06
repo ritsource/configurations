@@ -102,6 +102,19 @@ set showbreak=↪
 " let g:indentLine_setColors=0
 let g:indentLine_char_list=['│', '│', '│', '│']
 
+
+" Plug 'Yggdroot/indentLine'
+" 
+" Plug 'szw/vim-maximizer'
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'rust-lang/rust.vim'
+
+" *******************
+" the following stuff has been commented and moves to ~/.config/nvim/colorscheme.vim
+" ******************
+"
+" source ~/.config/nvim/colorscheme.vim
+"
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 " switch cursor to line when in insert mode, and block when not
 set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
@@ -131,12 +144,18 @@ Plug 'joshdick/onedark.vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'iCyMind/NeoSolarized'
 
 Plug 'Yggdroot/indentLine'
 
 Plug 'szw/vim-maximizer'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'rust-lang/rust.vim'
+
+
+
+" have to put this inside liteline
+"         \   'colorscheme': 'ayu',
 
 " LightLine {{{
     Plug 'itchyny/lightline.vim'
@@ -302,8 +321,8 @@ augroup configgroup
     autocmd VimResized * exe 'normal! \<c-w>='
     autocmd BufWritePost .vimrc,.vimrc.local,init.vim source %
     autocmd BufWritePost .vimrc.local source %
-    " save all files on focus lost, ignoring warnings about untitled buffers
-    autocmd FocusLost * silent! wa
+"    " save all files on focus lost, ignoring warnings about untitled buffers
+"    autocmd FocusLost * silent! wa
 
     " make quickfix windows take all the lower section of the screen
     " when there are multiple windows open
@@ -454,6 +473,7 @@ Plug 'sickill/vim-pasta'
     endfunction
 
     autocmd VimEnter * call StartUp()
+    autocmd VimEnter * wincmd p " source - https://stackoverflow.com/a/24809018/9406420
 
     Plug 'ryanoasis/vim-devicons'
 " }}}
@@ -530,6 +550,7 @@ Plug 'sickill/vim-pasta'
 
 " coc {{{
     Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+    " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     let g:coc_global_extensions = [
     \ 'coc-css',
@@ -694,9 +715,13 @@ let g:ctrlp_mruf_exclude = '.*/tmp/.*\|.*/.git/.*|.*/node_modules'
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:ctrlp_mruf_relative = 1
 
-" Colorscheme and final setup {{{
-    " This call must happen after the plug#end() call to ensure
-    " that the colorschemes have been loaded
+" *******************
+" the following stuff has been commented and moves to ~/.config/nvim/colorscheme.vim
+" ******************
+"
+"  Colorscheme and final setup {{{
+"    " This call must happen after the plug#end() call to ensure
+"    " that the colorschemes have been loaded
     if filereadable(expand("~/.vimrc_background"))
         let base16colorspace=256
         source ~/.vimrc_background
@@ -708,6 +733,9 @@ let g:ctrlp_mruf_relative = 1
         let ayucolor="mirage" " for mirage version of theme
         " let ayucolor="dark"   " for dark version of theme
         colorscheme ayu
+
+        " set background=light
+        " colorscheme NeoSolarized
 
         " set background=dark
         " set background=light
@@ -727,9 +755,13 @@ let g:ctrlp_mruf_relative = 1
     highlight htmlArg cterm=italic term=italic gui=italic
     highlight xmlAttrib cterm=italic term=italic gui=italic
     " highlight Type cterm=italic term=italic gui=italic
-    highlight Normal ctermbg=none
+
+    hi Normal guibg=NONE ctermbg=NONE
+    " highlight Normal ctermbg=none
 " }}}
 "
+
+
 inoremap <C-Space> <C-x><C-o>
 inoremap <C-@> <C-Space>
 
@@ -808,7 +840,11 @@ let g:LanguageClient_serverCommands = {
     \ }
 
 " cursor color according to ayutheme
-highlight Cursor guifg=black guibg=#ffcc66
+" highlight Cursor guifg=black guibg=#ffcc66
+
+" source - https://stackoverflow.com/a/37720708/9406420
+" hi Normal guibg=NONE ctermbg=NONE
+hi Normal guibg=NONE
 
 
 " for menu completion like 
@@ -832,8 +868,5 @@ highlight Cursor guifg=black guibg=#ffcc66
 " for JSX  support
 " Plug 'pangloss/vim-javascript'
 Plug 'pangloss/vim-javascript'
-
-
-
 
 
