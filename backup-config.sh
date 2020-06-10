@@ -8,6 +8,7 @@ declare -a tracked_file_paths=(
     ".bashrc"
     ".bash_profile"
     ".profile"
+    ".tmux.conf"
     ".config/nvim/init.vim"
     ".config/nvim/coc-settings.json"
     ".config/nvim/extra.vim"

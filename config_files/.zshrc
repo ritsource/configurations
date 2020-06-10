@@ -89,12 +89,14 @@ alias rr="refresh"
 alias cc="clear"
 alias wh="which"
 alias la="ls -a"
+alias tt="todo.sh ls"
 #
 
 # application/tool aliases
 #
 alias bree="broot"
 alias rust="cargo"
+alias todo="todo.sh"
 #
 
 # vi-vim-nvim aliases, all resolving to nvim
