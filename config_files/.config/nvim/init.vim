@@ -846,7 +846,6 @@ let g:LanguageClient_serverCommands = {
 " hi Normal guibg=NONE ctermbg=NONE
 hi Normal guibg=NONE
 
-
 " for menu completion like 
 " {{{{
   
