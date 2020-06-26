@@ -1,0 +1,123 @@
+#
+# alacritty - https://github.com/alacritty/alacritty
+#
+
+#
+# reference - https://github.com/semanser/dotfiles/blob/master/.alacritty.yml
+#
+
+
+env:
+    TERM: xterm-256color
+
+window:
+    dimensions:
+        columns: 188
+        lines: 44
+
+    padding:
+        x: 5
+        y: 5
+
+    decorations: buttonless
+
+background_opacity: 1
+
+draw_bold_text_with_bright_colors: true
+
+font:
+    normal:
+        family: Monaco
+        # family: Menlo  
+        style: Regular
+    bold:
+        family: Monaco
+        # family: Menlo  
+        style: Regular
+    italic:
+        family: Monaco
+        # family: Menlo  
+        style: Italic
+
+    size: 12.0
+
+    offset:
+        x: 0
+        y: 5
+
+    glyph_offset:
+        x: 0
+        y: 5
+
+    use_thin_strokes: false
+
+debug.render_timer: false
+
+# visual_bell:
+#     animation: EaseOutExpo
+#     duration: 0
+
+key_bindings:
+    # for word navigation - source - https://github.com/alacritty/alacritty/wiki/Keyboard-mappings
+    - { key: Right,  mods: Alt,           chars: "\x1bf"                       }
+    - { key: Left,   mods: Alt,           chars: "\x1bb"                       }
+
+
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
+
+mouse:
+  double_click: { threshold: 300 }
+  triple_click: { threshold: 300 }
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
+
+hide_cursor_when_typing: true
+
+# Colors (Tomorrow Night Bright)
+colors:
+    # Default colors
+    primary:
+        background: '0x000000'
+        foreground: '0xeaeaea'
+
+    # Colors the cursor will use if `custom_cursor_colors` is true
+    cursor:
+        text: '0x000000'
+        cursor: '0xbae67e'
+
+    # Normal colors
+    normal:
+        black:   '0x000000'
+        red:     '0xf28779'
+        green:   '0xbae67e'
+        yellow:  '0xffd580'
+        blue:    '0x73d0ff'
+        magenta: '0xd4bfff'
+        cyan:    '0x95e6cb'
+        white:   '0xefefef'
+
+    # Bright colors
+    bright:
+        black:   '0x666666'
+        red:     '0xf28779'
+        green:   '0xbae67e'
+        yellow:  '0xffd580'
+        blue:    '0x73d0ff'
+        magenta: '0xd4bfff'
+        cyan:    '0x95e6cb'
+        white:   '0xffffff'
+    
+    # Dim colors (Optional)
+    dim:
+        black:   '0x333333'
+        red:     '0xf28779'
+        green:   '0xbae67e'
+        yellow:  '0xffd580'
+        blue:    '0x73d0ff'
+        magenta: '0xd4bfff'
+        cyan:    '0x95e6cb'
+        white:   '0xdddddd'
+
+

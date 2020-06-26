@@ -12,6 +12,7 @@ declare -a tracked_file_paths=(
     ".config/nvim/init.vim"
     ".config/nvim/coc-settings.json"
     ".config/nvim/extra.vim"
+    ".config/alacritty/alacritty.yml"
 )
 
 REPO_ROOT=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
