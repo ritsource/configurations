@@ -90,6 +90,7 @@ alias cc="clear"
 alias wh="which"
 alias la="ls -a"
 alias tt="todo.sh ls"
+alias :q="exit"
 #
 
 # application/tool aliases
@@ -97,6 +98,7 @@ alias tt="todo.sh ls"
 alias bree="broot"
 alias rust="cargo"
 alias todo="todo.sh"
+alias ripgrep="rg"
 #
 
 # vi-vim-nvim aliases, all resolving to nvim
@@ -148,4 +150,15 @@ export LC_ALL=en_US.UTF-8
 
 # clear
 
-
+# Prompting a line between each command
+# Source - https://stackoverflow.com/a/20615683/9406420
+#
+STARTUP=true
+precmd() {
+    if $STARTUP; then
+        STARTUP=false
+    else
+        echo
+    fi
+}
+#
