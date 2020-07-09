@@ -870,3 +870,4 @@ Plug 'pangloss/vim-javascript'
 
 
 noremap <silent> <Leader>f :FZF -i<CR>
+

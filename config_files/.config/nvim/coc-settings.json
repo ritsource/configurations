@@ -14,5 +14,5 @@
     "diagnostic.hintSign": "○",
     "coc.preferences.currentFunctionSymbolAutoUpdate": true,
     "git.addGBlameToBufferVar": true,
-    "coc.preferences.formatOnSaveFiletypes": ["typescript", "javascript", "typescript.tsx", "typescriptreact", "javascriptreact", "rust", "go", "sh", "shell", "bash"]
+    "coc.preferences.formatOnSaveFiletypes": ["typescript", "javascript", "typescript.tsx", "typescriptreact", "javascriptreact", "rust", "rs", "go", "sh", "shell", "bash"]
 }
