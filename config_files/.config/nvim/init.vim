@@ -149,7 +149,7 @@ Plug 'iCyMind/NeoSolarized'
 Plug 'Yggdroot/indentLine'
 
 Plug 'szw/vim-maximizer'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'rust-lang/rust.vim'
 
 
@@ -567,7 +567,8 @@ Plug 'sickill/vim-pasta'
     \ 'coc-prettier',
     \ 'coc-ultisnips',
     \ 'coc-rls',
-    \ 'coc-sh'
+    \ 'coc-sh',
+    \ 'coc-go'
     \ ]
 
     "autocmd CursorHold * silent call CocActionAsync('highlight')
@@ -697,6 +698,7 @@ let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_variable_declarations = 1
 let g:go_highlight_variable_assignments = 1
+let g:go_fmt_command = "goimports"
 
 Plug 'timcharper/textile.vim', { 'for': 'textile' }
 Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
@@ -824,11 +826,6 @@ endif
 
 let &cpo = s:cpo_save
 
-
-" extra features for now
-source ~/.config/nvim/extra.vim
-
-
 " bash language server, needed for coc-sh
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
@@ -868,6 +865,36 @@ hi Normal guibg=NONE
 " Plug 'pangloss/vim-javascript'
 Plug 'pangloss/vim-javascript'
 
-
+" leader + f
 noremap <silent> <Leader>f :FZF -i<CR>
+
+" extra features for now
+source ~/.config/nvim/extra.vim
+
+
+
+" D, d only for deleteing not cut
+" Source https://stackoverflow.com/a/30423919/9406420
+nnoremap x "_x
+nnoremap d "_d
+nnoremap D "_D
+vnoremap d "_d
+
+nnoremap <leader>d ""d
+nnoremap <leader>D ""D
+vnoremap <leader>d ""d
+
+" " Cursor colro orange, like ayu-mirge `terminal theme`
+" highlight Cursor guifg=white guibg=#ffcc66
+
+" " {{{
+" " Source https://www.reddit.com/r/rust/comments/ai1qtn/rust_and_neovim_how_does_everything_fit_together/
+
+" " Source - https://github.com/dense-analysis/ale
+" Plug 'dense-analysis/ale'
+
+" " Source - https://github.com/racer-rust/vim-racer
+" Plug 'racer-rust/vim-racer'
+
+" " }}}
 

@@ -1,4 +1,4 @@
-# If you come from bash you might have to change your $PATH.
+#export PATH=/usr/local/bin:$PATH If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # # Path to your oh-my-zsh installation.
@@ -59,10 +59,22 @@ export PATH=$PATH:~/.custom/scripts/bin
 
 # Go-path export (golang)
 #
-export GOPATH=$HOME/go
-export GOROOT=$HOME/go
-export PATH=$PATH:$GOROOT/bin
+## export GOPATH=$HOME/go
+# source - https://stackoverflow.com/a/22878128/9406420
+# export GOROOT=/usr/local/Cellar/go/1.14.3/libexec
+# export GOTOOLDIR=/usr/local/Cellar/go/1.14.3/libexec/pkg/tool/darwin_amd64
+#
+# export PATH=$PATH:$GOPATH/bin
+## export PATH=$PATH:$(go env GOPATH)/bin
 # 
+
+
+export GOPATH=$HOME/go
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+
+# export PATH=$PATH:/usr/local/go/bin
 
 # exporting nvim as default text editor
 # source https://unix.stackexchange.com/questions/501862/how-can-i-set-the-default-editor-as-nano-on-my-mac
@@ -75,7 +87,7 @@ export VISUAL="$EDITOR"
 #
 alias hist="history"
 alias clip="pbcopy"
-alias sl="ls"
+# alias sl="ls"
 #
 
 # for refreshing terminal source
@@ -91,6 +103,7 @@ alias wh="which"
 alias la="ls -a"
 alias tt="todo.sh ls"
 alias :q="exit"
+alias tm="tmux"
 #
 
 # application/tool aliases
@@ -164,3 +177,4 @@ precmd() {
 #
 #
 
+source ~/.bashrc
